@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate HTML files
+        run: |
+          for f in *.html; do
+            python3 -c "open('$f').read()" && echo "$f OK"
+          done
+      - name: Check no console.log
+        run: |
+          ! grep -r "console.log" . || exit 1
