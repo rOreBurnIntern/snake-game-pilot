@@ -1,0 +1,110 @@
+# acceptance-criteria.yaml
+# True Crime News Aggregator
+# Generated: 2026-03-31
+# Status: Pending implementation
+
+project: true-crime-news-aggregator
+version: 1.0
+created: 2026-03-31
+ready_for_review: false
+
+criteria:
+  functional:
+    - id: F1
+      description: "User can sign in with Google OAuth"
+      verification: "Manual test: Click 'Sign in with Google', complete OAuth flow, verify authenticated state persists on refresh"
+      test_file: "tests/auth.test.tsx"
+      status: pending
+      
+    - id: F2
+      description: "User sees top true crime story from last 24 hours"
+      verification: "Manual test: After sign-in, verify story card displays with headline, summary, source, timestamp"
+      test_file: "tests/story.test.tsx"
+      status: pending
+      
+    - id: F3
+      description: "User can share story via multiple methods"
+      verification: "Manual test: Click share button, verify copy link + social share options work"
+      test_file: "tests/share.test.tsx"
+      status: pending
+      
+    - id: F4
+      description: "Story detail page shows full story content"
+      verification: "Manual test: Click story card, verify detail page loads with full content"
+      test_file: "tests/story.test.tsx"
+      status: pending
+
+  non_functional:
+    - id: NF1
+      description: "Page loads in under 3 seconds on 4G connection"
+      verification: "Lighthouse performance score >= 50"
+      status: pending
+      
+    - id: NF2
+      description: "App is mobile responsive"
+      verification: "Manual test on 375px (mobile), 768px (tablet), 1440px (desktop) viewports"
+      status: pending
+      
+    - id: NF3
+      description: "No console errors in production build"
+      verification: "CI: npm run build succeeds with no warnings"
+      status: pending
+      
+    - id: NF4
+      description: "Touch targets are accessible (>= 44px)"
+      verification: "Manual test on mobile device or Chrome dev tools"
+      status: pending
+
+  board_artifacts:
+    - id: BA1
+      description: "Live application URL accessible from any machine"
+      verification: "Visit Vercel deployment URL, verify app loads"
+      status: pending
+      
+    - id: BA2
+      description: "GitHub repository with source code"
+      verification: "Repository URL exists and contains all source files"
+      status: pending
+      
+    - id: BA3
+      description: "Executive summary in completion comment"
+      verification: "Issue completion comment contains: what was built, how to use, live URL"
+      status: pending
+
+  quality:
+    - id: Q1
+      description: "TypeScript compiles without errors"
+      verification: "CI: npm run typecheck passes"
+      status: pending
+      
+    - id: Q2
+      description: "ESLint passes with no warnings"
+      verification: "CI: npm run lint passes"
+      status: pending
+      
+    - id: Q3
+      description: "Test coverage >= 80%"
+      verification: "CI: npm run test:coverage reports >= 80%"
+      status: pending
+      
+    - id: Q4
+      description: "Polished UI with modern styling"
+      verification: "Visual review: consistent spacing, typography, no layout issues"
+      status: pending
+
+compliance_check:
+  last_run: null
+  passing_count: 0
+  total_count: 15
+  ready_for_review: false
+
+deployment:
+  platform: vercel
+  auto_deploy: true
+  branch: main
+  preview_on_pr: true
+  
+verification_urls:
+  live: null
+  preview: null
+  github: null

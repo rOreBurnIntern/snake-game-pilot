@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-crime-dark text-white antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-crime-accent hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }.btn-secondary {
+    @apply bg-crime-darker hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 border border-gray-600 min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  .card {
+    @apply bg-crime-darker rounded-xl p-6 border border-gray-700 transition-shadow duration-200;
+  }
+  .card:hover {
+    @apply shadow-lg shadow-crime-accent/10;
+  }
+  .input-base {
+    @apply bg-crime-dark border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-crime-accent transition-colors duration-200 min-h-[44px];
+  }
+}
